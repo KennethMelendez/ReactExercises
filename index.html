@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>React Examples</title>
+
+</head>
+
+
+<body>
+
+    <!-- rendering elements -->
+    <div id="example1"></div>
+    <div id="example2"></div>
+    <div id="example3"></div>
+    <div id="example4"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.21.1/babel.min.js"></script>
+
+    <!-- React Examples -->
+
+    <script type="text/babel">
+
+        /*===========================================================
+                Hello World
+        ===========================================================*/
+
+        // basic example of displaying hello world on the page
+        
+        //example of storing an element into a variable
+        // const element = <h1>Hello World</h1>;
+
+        //     ReactDOM.render(
+        //         //<h1>Hello World</h1>,
+        //         element,
+        //         document.querySelector('#example1'));
+
+        
+        // const sayHelloToNathan = <h1> Hi Nathan!!! </h1>
+
+        // ReactDOM.render(
+        //     sayHelloToNathan,
+        //     document.querySelector("#example1")
+        // );
+
+        ReactDOM.render(<h1>Hello World</h1>,document.querySelector("#example1"));
+
+        /*===========================================================
+                JSX functions objects
+        ===========================================================*/
+
+        // example of using jsx with functions/objects    
+            const user = {
+                firstname: 'Kenneth',
+                lastname: 'Melendez'
+            }
+
+            function formatUser(user){
+                return `${user.firstname} ${user.lastname}`;
+            }
+
+            ReactDOM.render(
+                <h1>Hello ... {formatUser(user)} !!!</h1>,
+                document.querySelector("#example2")
+            );
+
+        
+
+        /*===========================================================
+                updating rendered element
+        ===========================================================*/
+
+            function tick(){
+
+                const element = (
+                    <div>
+                        <h1> Welcome.. </h1>
+                        <h2> It is {new Date().toLocaleTimeString()}.</h2>
+                    </div>
+                ); // end of element
+
+                ReactDOM.render(element,document.querySelector('#example3'));
+            }
+
+            //tick();
+            setInterval(tick,1000);
+        
+        /*===========================================================
+                Functional and Class Components
+        ===========================================================*/
+
+        // function Welcome(property){
+        //     return <h1> Hello there , {property.name} </h1>;
+        // }
+
+        // ReactDOM.render(
+        //     Welcome({name:'kenny'}),
+        //     document.querySelector('#example4')
+        // );
+
+            // class Welcome extends React.Component {
+            //     render(){
+            //         return <h1> hello , {this.props.name}</h1>;
+            //     }
+            // }
+/*
+        function Welcome(props) {
+            return <h1> Hello, {props.name}</h1>
+        }
+        const welcome = <Welcome name='Sarah'/>;
+        ReactDOM.render(
+            welcome,
+            document.querySelector('#example4')
+        );
+
+
+        function Welcome(props) {
+            return <h1>Hello there , {props.name}</h1>;
+        }
+        
+        function App(){
+            return (
+                <div>
+                    <Welcome name="Sara" />
+                    <Welcome name="Cahal" />
+                </div>
+            );
+        }
+
+        ReactDOM.render(
+            <App />,
+            document.querySelector('#example4')
+        );
+
+ReactDOM.render(
+  <App />,
+  document.querySelector('#example4')
+);
+*/
+/*
+        function Welcome(props) {
+            return <h1> Welcome {props.name} !!!!!</h1>;
+        }
+
+        function App (){
+            return (
+                <div>
+                    <Welcome name="Gillian" />
+                    <Welcome name="Goku" />
+                </div>
+            );
+        }
+
+        ReactDOM.render(
+            <App />,
+            document.querySelector("#example4")
+        );
+*/
+
+
+        // function Title(props){
+        //     return <li> Dont forget the .. {props.title}</li>
+        // }
+
+        // function List (){
+        //     return (
+        //         <ol>
+        //             <Title title="Milk" />
+        //             <Title title="Eggs" />
+        //             <Title title="Cheese" />
+        //             <Title title="Starbound" />                
+        //         </ol>
+        //     );
+        // }
+
+        // ReactDOM.render(
+        //     <List />,
+        //     document.querySelector("#example4")
+        // );
+
+
+            function Greeting(props){
+                return <h1>Greetings ...{props.name}</h1>;
+            }
+
+            function List(){
+                return (
+                    <div>
+                        <Greeting name="Kellie"/>
+                        <Greeting name="Nathan"/>
+                        <Greeting name="Kenneth"/>
+                    </div>
+                );
+            }
+
+            ReactDOM.render(
+                <List />,
+                document.querySelector("#example4")
+            );
+
+
+        </script>
+
+
+</body>
+
+</html>
